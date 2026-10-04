@@ -1,7 +1,5 @@
 import type { GreenApiCredentials } from "../../../shared/api";
 
-export type ChatStep = 'credentials' | 'phone' | 'chat';
-
 export type ChatCredentials = {
   idInstance: string;
   apiTokenInstance: string;

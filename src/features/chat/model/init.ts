@@ -9,8 +9,6 @@ import {
     $pollError,
     $sendError,
     $sending,
-    changeChatClicked,
-    credentialsSubmitted,
     logoutClicked,
     messageSubmitted,
     phoneSubmitted,
@@ -23,14 +21,9 @@ import {
     setMessageDraft,
     setPhone
 } from "./private";
-import { $step } from "./public";
 import type { ReceivePayload, SendPayload } from "./types";
 import { getApiErrorMessage, pollOnce, sendMessage, type GreenApiCredentials } from "../../../shared/api";
 
-$step
-    .on(phoneSubmitted, () => 'chat')
-    .on([credentialsSubmitted, changeChatClicked], () => 'phone')
-    .on(logoutClicked, () => 'credentials')
 
 $credentials
     .on(setIdInstance, (s, id) => ({ ...s, idInstance: id }))

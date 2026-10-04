@@ -1,4 +1,4 @@
-import { ChatPage } from '../pages/';
+import { ChatPage } from '../pages/chat-page';
 
 function App() {
   return <ChatPage />;
