@@ -80,7 +80,7 @@ const extractIncomingText = (body: ReceiveNotificationResponse['body']): Incomin
   if (!text || !senderChatId) return null
 
   return {
-    id: body.idMessage,
+    id: body.idMessage!,
     chatId: senderChatId,
     text,
   }

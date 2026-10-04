@@ -12,6 +12,7 @@ export const CredentialsForm = () => {
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault()
+    if (!credentials) return
     if (!credentials.idInstance.trim() || !credentials.apiTokenInstance.trim()) {
       setError('Введите idInstance и apiTokenInstance')
       return

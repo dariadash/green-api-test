@@ -26,8 +26,8 @@ import { getApiErrorMessage, pollOnce, sendMessage, type GreenApiCredentials } f
 
 
 $credentials
-    .on(setIdInstance, (s, id) => ({ ...s, idInstance: id }))
-    .on(setApiTokenInstance, (s, api) => ({ ...s, apiTokenInstance: api }))
+    .on(setIdInstance, (s, id) => s ? { ...s, idInstance: id } : { idInstance: id, apiTokenInstance: '' })
+    .on(setApiTokenInstance, (s, api) => s ? { ...s, apiTokenInstance: api } : { apiTokenInstance: api, idInstance: '' })
     .reset(logoutClicked)
 
 $phone
